@@ -1,8 +1,13 @@
 <template>
-  <div class="home">
+  <div id="home">
     <Head />
     <Select />
     <WeddingList />
+    <div class="upload">
+      <el-button type="primary" round @click="$router.push({ name: 'Admin' })"
+        >上传案例</el-button
+      >
+    </div>
   </div>
 </template>
 
@@ -16,7 +21,17 @@ export default {
   components: {
     Head,
     WeddingList,
-    Select
-  }
+    Select,
+  },
 }
 </script>
+<style lang="less">
+#home {
+  .upload {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 20px;
+  }
+}
+</style>

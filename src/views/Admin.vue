@@ -187,7 +187,7 @@ export default {
       if (!this.select) return this.$message.error('error, select null')
 
       const WeddingDB = this.$AV.Object.extend('wedding')
-      const weddingDB = this.wedding ? this.wedding : new WeddingDB()
+      const weddingDB = this.id ? this.wedding : new WeddingDB()
       weddingDB.set('title', this.title)
       weddingDB.set('tag', this.select.tag)
       weddingDB.set('sort', this.sort)
@@ -209,12 +209,12 @@ export default {
       }
       loading.close()
       this.$message({
-        message: '保存成功,3秒跳转首页',
+        message: '保存成功,2 秒跳转首页',
         type: 'success',
       })
       setTimeout(() => {
         this.$router.back()
-      }, 3000)
+      }, 2000)
     },
     // 上传详情的图片
     async contentChange() {
