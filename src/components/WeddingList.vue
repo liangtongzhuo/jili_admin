@@ -38,6 +38,8 @@ export default {
         text: 'Loading',
       })
       const query = new this.$AV.Query('wedding')
+      query.descending('sort')
+      query.addAscending('createdAt')
       const tag = this.$route.params.select
       if (tag && tag !== '最新') {
         query.equalTo('tag', tag)
